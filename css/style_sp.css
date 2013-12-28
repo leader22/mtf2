@@ -1,0 +1,452 @@
+/* ===================================== */
+/*
+
+	Music Tweets Finder v2 @ SP
+
+*/
+/* ===================================== */
+
+/* General */
+.wf {
+	font-family: 'Geo', sans-serif;
+	font-size:1.2em
+}
+
+h1 {
+	font-size:1.3rem;
+}
+
+h2 {
+	font-size:1.1rem;
+}
+
+h3 {
+	font-size:.9rem;
+}
+
+h4 {
+	font-size:.7rem;
+}
+/* General */
+
+/* Util */
+
+.cf {
+	zoom:1
+}
+
+.cf:after {
+	content:"";
+	display:block;
+	clear:both
+}
+/* Util */
+
+
+/* Style */
+a {
+	text-decoration:none;
+	color:#274a78;
+	transition:all .3s linear;
+}
+
+body {
+	background-color: #0d0015;
+	color: #0d0015;
+	font: 14px Verdana,Arial,'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',Osaka,'ＭＳ Ｐゴシック',sans-serif;
+	tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+mark {
+	color: #0094c8;
+	background-color: transparent;
+}
+
+#container {
+	background: url(/img/bg.png) repeat fixed 0 0 #f3f3f3;
+	width: 100%;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+	z-index: 2;
+}
+
+.inner {
+	margin: 8px;
+}
+
+.box {
+	display: box;
+	display: -webkit-box;
+}
+
+.flex {
+	box-flex: 1;
+	-webkit-box-flex: 1;
+}
+
+.header {
+	background: url(/img/bg.png) repeat fixed 0 0 #f3f3f3;
+	font-family: 'Geo', sans-serif;
+	margin-top: 0;
+	padding-top: 8px;
+}
+
+.header h1 {
+	text-shadow: 1px 1px 3px white;
+	font-weight: 900;
+	margin-right: 8px;
+	margin: 0;
+	padding: 0;
+}
+
+.header h1 + span {
+	font-size: 1rem;
+}
+
+.menu-box {
+	width: 64px;
+	height: 40px;
+	background-color: #0094c8;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.menu-btn {
+	text-align: center;
+	line-height: 40px;
+	display: block;
+	color: #fff;
+	text-shadow: -1px -1px 1px #0d0015;
+	font-size: 1.1rem;
+}
+
+.menu-list {
+	display: none;
+	list-style: none;
+	overflow: hidden;
+	margin: 8px 0 0;
+	padding: 0;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #ddd;
+}
+
+.menu-list li {
+	display: inline-block;
+	width: 33%;
+}
+
+.menu-list li a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.1rem;
+	box-sizing: border-box;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #fff;
+}
+
+.menu-list li:first-child a {
+	border-left: none;
+}
+
+.menu-list li:last-child a {
+	border-right: none;
+}
+
+
+.search-box {
+	background: url(/img/bg2.gif) repeat fixed 0 0 #274a78;
+	padding: 4px 0;
+	min-height: 48px;
+}
+
+.search-form {
+	position: relative;
+}
+
+.inpt-reset {
+	appearance: none;
+	-webkit-appearance: none;
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	background: none;
+	font: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+.search-form input[type=text] {
+	background-color: #fff;
+	height: 40px;
+	box-sizing: border-box;
+	font-size: 1.5rem;
+	padding-left: 8px;
+	box-sizing: padding-box;
+	display: block;
+}
+
+.search-form label {
+	display: block;
+	margin: 0 0 8px;
+	color: #fff;
+}
+
+.search-form input[type=checkbox] {
+	transform: scale(2, 2);
+	-webkit-transform: scale(2, 2);
+	margin: 0 16px 0 8px;
+}
+
+.search-form input[type=checkbox] + span {
+	color: #aaa;
+}
+
+.search-form input[type=checkbox]:checked + span {
+	color: #fff;
+}
+
+.search-form input[type=submit] {
+	width: 64px;
+	background-color: #0094c8;
+	color: #fff;
+	text-shadow: -1px -1px 1px #0d0015;
+	height: 40px;
+}
+
+.title-box {
+	background-color: #fff;
+	padding: 8px;
+	margin: 0 0 8px;
+	box-shadow: #ddd 1px 1px 1px;
+}
+
+.page-h3 {
+	border-bottom: 2px dotted #274A78;
+	color: #274A78;
+	margin: 0;
+}
+
+blockquote {
+	background: #eee;
+	font-style: italic;
+	font-weight: 900;
+	box-shadow: #DDD 1px 1px 1px;
+	padding: 16px;
+	margin: 8px auto;
+}
+
+.page-list {
+	padding-left: 8px;
+}
+
+.page-list li {
+	list-style: square inside;
+}
+
+.page-dl dt {
+	font-weight: 900;
+	margin-bottom: 8px;
+}
+
+.page-dl dd {
+	margin: 0 auto 16px;
+	padding: 8px;
+	background: #F3F3F3;
+}
+
+
+.btn {
+	display: block;
+	text-align: center;
+	font-size: 1.2rem;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	box-sizing: border-box;
+}
+
+.btn-l {
+	background-color: #0094c8;
+	color: #fff;
+	text-shadow: -1px -1px 1px #0d0015;
+	height: 40px;
+	line-height: 40px;
+}
+
+.btn-s {
+	background-color: #eee;
+	border: 1px outset #fff;
+	font-size: .8rem;
+	height: 32px;
+	line-height: 30px;
+}
+
+.btn.err {
+	background-color: #b94047;
+	cursor: default;
+	border: 1px inset #fff;
+	color: #fff;
+}
+
+.tweet-lists {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.tweet-box {
+	position: relative;
+}
+
+.tweet-header {
+	margin-bottom: 8px;
+}
+
+.tweet-header > a {
+	display: block;
+	margin-right: 8px;
+}
+
+.tweet-header > div {
+	font-size: .7rem;
+	margin-right: 50px;
+}
+
+.tweet-header > div > a:first-child {
+	font-weight: 900;
+}
+
+.tweet-detail-btn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 40px;
+	line-height: 40px;
+	width: 48px;
+	text-align: center;
+	font-size: .9rem;
+	background-color: #eee;
+}
+
+
+.tweet-list {
+	position: relative;
+	overflow: hidden;
+}
+
+.tweet-list::after {
+	position: absolute;
+	content: "";
+	right: -48px;
+	bottom: 0px;
+	width: 100px;
+	padding: 8px 0;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+
+.nowplaying.tweet-list::after {
+	background-color: #274a78;
+}
+.movie.tweet-list::after {
+	background-color: #0094c8;
+}
+
+
+#modal {
+	background: url(/img/bg.png) repeat fixed 0 0 #f3f3f3;
+	position: absolute;
+	display: none;
+	visibility: hidden;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	min-height: 100%;
+}
+
+#modal.show {
+	display: block;
+	visibility: visible;
+}
+
+#modal .detail-header {
+	margin: 0 0 8px;
+	background-color: #eee;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 4px;
+	font-size: .7rem;
+}
+
+#tweet_detail_box {
+	min-height: 110px;
+}
+
+.detail-box img {
+	padding: 4px;
+}
+
+.nowplaying.detail-box img {
+	background-color: #274a78;
+}
+.movie.detail-box img {
+	background-color: #0094c8;
+}
+.error.detail-box img {
+	background-color: #b94047;
+}
+
+.detail-box {
+	margin-bottom: 8px;
+	padding-bottom: 16px;
+	border-bottom: 1px dashed #ddd;
+}
+
+#modal .user-text-box {
+	margin-left: 8px;
+	font-size: .9rem;
+	overflow: hidden;
+}
+
+#close_detail_btn {
+	color: #000;
+	font-size: 1.5rem;
+	line-height: 36px;
+	top: 8px;
+	right: 8px;
+}
+
+#selected_user_name {
+	font-size: .9rem;
+	font-weight: 900;
+}
+#selected_user_name::before {
+	content: "@";
+}
+
+#selected_user {
+	font-size: .9rem;
+}
+
+.tap-btn.tapping {
+	opacity: .3;
+}
+
+
+.footer {
+	background-color: #0d0015;
+	color: #fff;
+	text-align:center;
+	padding: 8px 0;
+	margin-top: 8px;
+	font-size: .9rem;
+}
+
+.footer a {
+	color: #0094c8;
+}
